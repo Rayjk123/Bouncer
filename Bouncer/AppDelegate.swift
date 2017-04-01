@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController()
         nav.navigationBar.barTintColor = UIColor.red
         //let root = ValidQRViewController()
-        let root = ScannerViewController()
+        let root = InviteGuestViewController()
         nav.viewControllers = [root]
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        print(UIFont.familyNames)
+        //print(UIFont.familyNames)
         return true
     }
     

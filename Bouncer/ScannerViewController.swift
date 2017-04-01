@@ -9,9 +9,14 @@ import UIKit
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    private lazy var inviteRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "codes")
+    private var inviteRefHandle: FIRDatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //inviteRef.child("123456").setValue("123456")
         
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
@@ -85,15 +90,28 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             found(code: readableObject.stringValue);
         }
         
-        dismiss(animated: true)
+        //dismiss(animated: true)
     }
     
     func found(code: String) {
         print(code)
         let viewController = ValidQRViewController()
-        self.present(viewController, animated: true, completion: nil)
+        inviteRef.observe(.value, with: { (snapshot) in
+            if(snapshot.hasChild(code)){
+                viewController.valid = true
+                print("Entered Valid")
+                self.present(viewController, animated: true, completion: nil)
+            }
+            else{
+                viewController.valid = false
+                print("Entered Invalid")
+                self.present(viewController, animated: true, completion: nil)
+            }
+        })
+        
         
     }
+    
     
     override var prefersStatusBarHidden: Bool {
         return true

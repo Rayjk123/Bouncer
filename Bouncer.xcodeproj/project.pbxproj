@@ -21,6 +21,7 @@
 		DE8DC92F1E8F859B00FFA99C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */; };
 		DE8DC9521E8F933200FFA99C /* Pokemon Battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */; };
 		DE8DC9541E8F9D1D00FFA99C /* ValidQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */; };
+		DECF38A11E8FD3EE00EF9958 /* InviteGuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pokemon Battle.mp3"; path = "../../../../../Volumes/Transcend/DogeFeed/UGAHackathon2016/Pokemon Battle.mp3"; sourceTree = "<group>"; };
 		DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidQRViewController.swift; sourceTree = "<group>"; };
+		DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteGuestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +89,10 @@
 		DE8DC90D1E8F41DE00FFA99C /* Bouncer */ = {
 			isa = PBXGroup;
 			children = (
-				DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */,
 				DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */,
 				DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */,
 				DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */,
+				DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */,
 				DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */,
 				DE8DC92B1E8F58F000FFA99C /* Resources */,
 				DE8DC9121E8F41DE00FFA99C /* Main.storyboard */,
@@ -114,6 +116,7 @@
 		DE8DC92B1E8F58F000FFA99C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */,
 				DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */,
 				DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */,
 				DE8DC9291E8F55B400FFA99C /* Invites.swift */,
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECF38A11E8FD3EE00EF9958 /* InviteGuestViewController.swift in Sources */,
 				DE8DC9541E8F9D1D00FFA99C /* ValidQRViewController.swift in Sources */,
 				DE8DC92F1E8F859B00FFA99C /* ScannerViewController.swift in Sources */,
 				DE8DC9111E8F41DE00FFA99C /* InvitesViewController.swift in Sources */,

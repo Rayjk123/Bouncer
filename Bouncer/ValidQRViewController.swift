@@ -9,7 +9,7 @@
 import UIKit
 
 class ValidQRViewController: UIViewController{
-    var valid = false
+    var valid: Bool?
     
     var image: UIImageView!
     var label: UILabel!
@@ -20,7 +20,7 @@ class ValidQRViewController: UIViewController{
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
         view.backgroundColor = UIColor.white
-        if(valid){
+        if(valid)!{
             setupUIElementsValid()
         }
         else{
