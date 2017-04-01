@@ -1,5 +1,8 @@
 //Taken from Hacking From Swift
 //URL: https://www.hackingwithswift.com/example-code/media/how-to-scan-a-qr-code
+//
+
+import Firebase
 import AVFoundation
 import UIKit
 
@@ -87,8 +90,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     func found(code: String) {
         print(code)
-        let viewController = InvitesViewController()
-        navigationController?.pushViewController(viewController, animated: true)
+        let viewController = ValidQRViewController()
+        self.present(viewController, animated: true, completion: nil)
+        
     }
     
     override var prefersStatusBarHidden: Bool {
