@@ -14,6 +14,7 @@
 		DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */; };
 		DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */; };
 		DE8DC9221E8F41EC00FFA99C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8DC9211E8F41EC00FFA99C /* CoreLocation.framework */; };
+		DE8DC9241E8F45D400FFA99C /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DE8DC9181E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8DC91A1E8F41DE00FFA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8DC9211E8F41EC00FFA99C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */,
 				DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */,
 				DE8DC91A1E8F41DE00FFA99C /* Info.plist */,
+				DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */,
 			);
 			path = Bouncer;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */,
 				DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */,
 				DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */,
+				DE8DC9241E8F45D400FFA99C /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
