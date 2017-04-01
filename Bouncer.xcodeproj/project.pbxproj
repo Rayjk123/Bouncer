@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BCFE28D638078D5C08BDFD55 /* Pods_Bouncer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA93B5DD3293156820275C9D /* Pods_Bouncer.framework */; };
 		DE8DC90F1E8F41DE00FFA99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */; };
-		DE8DC9111E8F41DE00FFA99C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9101E8F41DE00FFA99C /* ViewController.swift */; };
+		DE8DC9111E8F41DE00FFA99C /* InvitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */; };
 		DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9121E8F41DE00FFA99C /* Main.storyboard */; };
 		DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */; };
 		DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		DE8DC9261E8F526800FFA99C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */; };
 		DE8DC9281E8F546E00FFA99C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */; };
 		DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9291E8F55B400FFA99C /* Invites.swift */; };
+		DE8DC92D1E8F65B700FFA99C /* DisplayQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,7 @@
 		DA93B5DD3293156820275C9D /* Pods_Bouncer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bouncer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8DC90B1E8F41DE00FFA99C /* Bouncer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bouncer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE8DC9101E8F41DE00FFA99C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesViewController.swift; sourceTree = "<group>"; };
 		DE8DC9131E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8DC9181E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE8DC9291E8F55B400FFA99C /* Invites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invites.swift; sourceTree = "<group>"; };
+		DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayQRViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +82,14 @@
 			isa = PBXGroup;
 			children = (
 				DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */,
-				DE8DC9101E8F41DE00FFA99C /* ViewController.swift */,
+				DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */,
+				DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */,
+				DE8DC92B1E8F58F000FFA99C /* Resources */,
 				DE8DC9121E8F41DE00FFA99C /* Main.storyboard */,
 				DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */,
 				DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */,
 				DE8DC91A1E8F41DE00FFA99C /* Info.plist */,
 				DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */,
-				DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */,
-				DE8DC9291E8F55B400FFA99C /* Invites.swift */,
 			);
 			path = Bouncer;
 			sourceTree = "<group>";
@@ -99,6 +101,15 @@
 				DA93B5DD3293156820275C9D /* Pods_Bouncer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE8DC92B1E8F58F000FFA99C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */,
+				DE8DC9291E8F55B400FFA99C /* Invites.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8DC9111E8F41DE00FFA99C /* ViewController.swift in Sources */,
+				DE8DC9111E8F41DE00FFA99C /* InvitesViewController.swift in Sources */,
 				DE8DC90F1E8F41DE00FFA99C /* AppDelegate.swift in Sources */,
 				DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */,
+				DE8DC92D1E8F65B700FFA99C /* DisplayQRViewController.swift in Sources */,
 				DE8DC9281E8F546E00FFA99C /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

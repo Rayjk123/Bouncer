@@ -8,19 +8,25 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class InvitesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let storage = FIRStorage.storage()
-    private lazy var eventRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "Event").child("Foods")
-    private var eventRefHandle: FIRDatabaseHandle?
+    private lazy var inviteRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "guest")
+    private var inviteRefHandle: FIRDatabaseHandle?
+    
+    let tableview = UITableView()
+    
+    var invites = [Invites]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        //self.navigationController?.navigationBar.isHidden = true
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+        observeNewinvites()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +35,6 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setupTableView(){
-        let tableview = UITableView()
         tableview.delegate = self
         tableview.dataSource = self
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "noteCell")
@@ -41,10 +46,14 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableview.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableview.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        
     }
 
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return invites.count
         return 10
     }
     
@@ -65,6 +74,19 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
+    
+    
+    func observeNewinvites(){
+        inviteRefHandle = inviteRef.observe(.childAdded, with: { (snapshot) in
+            //Using an if let just to check that the snapshot value does exist.
+            if let invites1 = snapshot.value as? [String: AnyObject]{
+                let inviteData = Invites(snapshot: snapshot)
+                self.invites.append(inviteData)
+                self.tableview.reloadData()
+            }
+        })
+    }
+ 
     
     
 }

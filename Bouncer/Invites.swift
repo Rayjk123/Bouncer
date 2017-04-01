@@ -22,7 +22,7 @@ struct Invites {
     
     
     init(inviteQR: String, key: String = "") {
-        self.key = key
+        self.key = ""
         self.inviteQR = inviteQR
         self.ref = nil
     }
