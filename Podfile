@@ -9,7 +9,6 @@ target 'Bouncer' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'QRCode'
-  pod 'QRCodeReader.swift', '~> 7.4.0'
   use_frameworks!
 
   # Pods for Bouncer
