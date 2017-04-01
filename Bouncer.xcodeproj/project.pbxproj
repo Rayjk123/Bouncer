@@ -14,7 +14,9 @@
 		DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */; };
 		DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */; };
 		DE8DC9221E8F41EC00FFA99C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8DC9211E8F41EC00FFA99C /* CoreLocation.framework */; };
-		DE8DC9241E8F45D400FFA99C /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */; };
+		DE8DC9261E8F526800FFA99C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */; };
+		DE8DC9281E8F546E00FFA99C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */; };
+		DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9291E8F55B400FFA99C /* Invites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		DE8DC9181E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8DC91A1E8F41DE00FFA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8DC9211E8F41EC00FFA99C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DE8DC9291E8F55B400FFA99C /* Invites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,9 @@
 				DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */,
 				DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */,
 				DE8DC91A1E8F41DE00FFA99C /* Info.plist */,
-				DE8DC9231E8F45D400FFA99C /* GoogleService-Info (1).plist */,
+				DE8DC9251E8F526800FFA99C /* GoogleService-Info.plist */,
+				DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */,
+				DE8DC9291E8F55B400FFA99C /* Invites.swift */,
 			);
 			path = Bouncer;
 			sourceTree = "<group>";
@@ -159,9 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */,
+				DE8DC9261E8F526800FFA99C /* GoogleService-Info.plist in Resources */,
 				DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */,
 				DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */,
-				DE8DC9241E8F45D400FFA99C /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +228,8 @@
 			files = (
 				DE8DC9111E8F41DE00FFA99C /* ViewController.swift in Sources */,
 				DE8DC90F1E8F41DE00FFA99C /* AppDelegate.swift in Sources */,
+				DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */,
+				DE8DC9281E8F546E00FFA99C /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
