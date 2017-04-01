@@ -18,6 +18,8 @@
 		DE8DC9281E8F546E00FFA99C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */; };
 		DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9291E8F55B400FFA99C /* Invites.swift */; };
 		DE8DC92D1E8F65B700FFA99C /* DisplayQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */; };
+		DE8DC92F1E8F859B00FFA99C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */; };
+		DE8DC9521E8F933200FFA99C /* Pokemon Battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE8DC9291E8F55B400FFA99C /* Invites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invites.swift; sourceTree = "<group>"; };
 		DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayQRViewController.swift; sourceTree = "<group>"; };
+		DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pokemon Battle.mp3"; path = "../../../../../Volumes/Transcend/DogeFeed/UGAHackathon2016/Pokemon Battle.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */,
 				DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */,
 				DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */,
+				DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */,
 				DE8DC92B1E8F58F000FFA99C /* Resources */,
 				DE8DC9121E8F41DE00FFA99C /* Main.storyboard */,
 				DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */,
@@ -106,6 +111,7 @@
 		DE8DC92B1E8F58F000FFA99C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */,
 				DE8DC9271E8F546E00FFA99C /* UIColorExtension.swift */,
 				DE8DC9291E8F55B400FFA99C /* Invites.swift */,
 			);
@@ -176,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */,
+				DE8DC9521E8F933200FFA99C /* Pokemon Battle.mp3 in Resources */,
 				DE8DC9261E8F526800FFA99C /* GoogleService-Info.plist in Resources */,
 				DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */,
 				DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */,
@@ -237,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8DC92F1E8F859B00FFA99C /* ScannerViewController.swift in Sources */,
 				DE8DC9111E8F41DE00FFA99C /* InvitesViewController.swift in Sources */,
 				DE8DC90F1E8F41DE00FFA99C /* AppDelegate.swift in Sources */,
 				DE8DC92A1E8F55B400FFA99C /* Invites.swift in Sources */,

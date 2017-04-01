@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let nav = UINavigationController()
         nav.navigationBar.barTintColor = UIColor.red
-        let root = InvitesViewController()
+        let root = ScannerViewController()
         nav.viewControllers = [root]
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

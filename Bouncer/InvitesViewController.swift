@@ -21,6 +21,11 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        let invite = Invites(inviteQR: "abcde", owner: "Panda")
+        let newRef = self.inviteRef.childByAutoId() //Create a child to store all the information
+        newRef.setValue(invite.toAnyObject())
+ */
         
         setupTableView()
         //self.navigationController?.navigationBar.isHidden = true
@@ -53,20 +58,24 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return invites.count
-        return 10
+        return invites.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        let label = UILabel(frame: CGRect(x: 20, y: 10, width: UIScreen.main.bounds.width - 60, height: 30))
-        label.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
-        label.text = String(indexPath.row)
+        let invite = invites[indexPath.row]
+        
+        let label = UILabel(frame: CGRect(x: 20, y: 10, width: UIScreen.main.bounds.width - 60, height: 50))
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.text = "You have gotten an invite from " + invite.owner + "!"
         cell.addSubview(label)
+        label.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
+        label.centerXAnchor.constraint(equalTo: cell.centerXAnchor).isActive = true
         return cell;
     }
     
@@ -86,6 +95,8 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         })
     }
+    
+    
  
     
     
