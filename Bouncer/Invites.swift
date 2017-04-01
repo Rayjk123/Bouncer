@@ -10,38 +10,43 @@ import UIKit
 import FirebaseDatabase
 
 struct Invites {
-    let inviteQR: String
+    let qrCode: String
     let key: String
     let owner: String
+    let qrImageURL: String
     let ref: FIRDatabaseReference?
     
     init(){
-        inviteQR = ""
+        qrCode = ""
         key = ""
         owner = ""
+        qrImageURL = ""
         ref = nil
     }
     
     
-    init(inviteQR: String, owner: String, key: String = "") {
+    init(qrCode: String, owner: String, qrImageURL: String, key: String = "") {
         self.key = ""
         self.owner = owner
-        self.inviteQR = inviteQR
+        self.qrCode = qrCode
+        self.qrImageURL = qrImageURL
         self.ref = nil
     }
     
     init(snapshot: FIRDataSnapshot) {
         self.key = snapshot.key
         let snapshotValue = snapshot.value as! [String: AnyObject]
-        self.inviteQR = snapshotValue["inviteQR"] as! String
+        self.qrCode = snapshotValue["qrCode"] as! String
         self.owner = snapshotValue["owner"] as! String
+        self.qrImageURL = snapshotValue["qrImageURL"] as! String
         self.ref = snapshot.ref
     }
     
     func toAnyObject() -> Any {
         return [
-            "inviteQR": inviteQR,
-            "owner": owner
+            "qrCode": qrCode,
+            "owner": owner,
+            "qrImageURL": qrImageURL
             ]
     }
 }

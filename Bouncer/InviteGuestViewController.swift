@@ -15,6 +15,7 @@ class InviteGuestViewController: UIViewController {
     private lazy var storageRef = FIRStorage.storage()
     private lazy var inviteRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "guests")
     private var inviteRefHandle: FIRDatabaseHandle?
+    private var firstTime = true
     
     var textfield = UITextField()
     var button = UIButton()
@@ -22,7 +23,7 @@ class InviteGuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.cloud()
-        //inviteRef.child("panda@gmail.com").setValue("abcde")
+        inviteRef.child("Panda@gmail").setValue("abcde")
         setupConstraints()
         setupUI()
         //createQRCode()
@@ -64,6 +65,10 @@ class InviteGuestViewController: UIViewController {
     
     func giveInvite(sender: UIButton){
         let validTextField: Bool = checkValidTextField() //Check to see that the textfields are valid
+        if(!firstTime){
+            inviteRef = FIRDatabase.database().reference(withPath: "guests")
+        }
+        
         if(validTextField){ //Since the textfield is valid. Validate to see if the guest exists
             handleUser()
         }
@@ -84,9 +89,12 @@ class InviteGuestViewController: UIViewController {
     //Checks to see if the guest exists and acts upon it if the user does exist.
     //If the guest exists then send the guest a QR Code
     func handleUser(){
-        inviteRef.observe(.value, with: { (snapshot) in
+        var handle: UInt = 0
+        handle = inviteRef.observe(.value, with: { (snapshot) in
             if(snapshot.hasChild(self.textfield.text!)){ //If the guest exists call createQRCode with the username
                 self.createQRCode(username: self.textfield.text!)
+                self.inviteRef.removeObserver(withHandle: handle)
+                self.firstTime = false
                 print("Entered Valid")
             }
             else{
@@ -118,10 +126,9 @@ class InviteGuestViewController: UIViewController {
     //calls all the QRCode Methods
     func createQRCode(username: String){
         let code = createRandomCode()
-        //Creates a
+        //Creates a QRImage which we will find the URL to and then pass that value into the assignQRCode function
         storeQRImage(qrCode: code, username: username)
         //assignQRCode(code: code, username: username)
-        print(code)
         
     }
     
@@ -150,7 +157,11 @@ class InviteGuestViewController: UIViewController {
     }
     
     func assignQRCode(code: String, username: String, imageURL: String){
-        inviteRef.child(username).child("invites").setValue(code)
+        let newRef = inviteRef.child(username).child("invites").childByAutoId()
+        let codeRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "codes")
+        codeRef.child(code).setValue(code)
+        let invite = Invites(qrCode: code, owner: username, qrImageURL: imageURL)
+        newRef.setValue(invite.toAnyObject())
     }
     
     
