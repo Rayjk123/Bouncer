@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InvitesViewController.swift
 //  Bouncer
 //
 //  Created by Branden Lee on 3/31/17.

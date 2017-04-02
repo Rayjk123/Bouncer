@@ -1,5 +1,5 @@
 //
-//  inviteGuestViewController.swift
+//  InviteGuestViewController.swift
 //  Bouncer
 //
 //  Created by Branden Lee on 4/1/17.

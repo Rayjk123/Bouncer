@@ -10,13 +10,13 @@ import UIKit
 @IBDesignable
 
 class DesignableLabel: UILabel {
-    
-    
+
     @IBInspectable var cornerRadius: CGFloat = 0{
         didSet{
             layer.cornerRadius = cornerRadius
         }
     }
+
     @IBInspectable var glow: CGFloat = 0{
         didSet{
             self.layer.shadowColor = shadowColor?.cgColor
@@ -24,7 +24,7 @@ class DesignableLabel: UILabel {
             self.layer.shadowOpacity = 0.9
             self.layer.masksToBounds = false
         }
- 
+
     }
-    
+
 }

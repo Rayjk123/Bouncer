@@ -1,5 +1,5 @@
 //
-//  GeofenceViewController.swift
+//  CheckOutViewController.swift
 //  Bouncer
 //
 //  Created by Sotaro Sugimoto on 2017/04/01.
@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class CheckOutViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locator = CLLocationManager()

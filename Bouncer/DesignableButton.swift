@@ -11,7 +11,7 @@ import UIKit
 
 class DesignableButton: UIButton {
 
-    
+
     @IBInspectable var cornerRadius: CGFloat = 0{
         didSet{
             layer.cornerRadius = cornerRadius
@@ -29,8 +29,6 @@ class DesignableButton: UIButton {
         }
     }
 
-
-    
     @IBInspectable var glowWhite: CGFloat = 0{
         didSet{
         self.layer.shadowColor = UIColor.white.cgColor
@@ -55,11 +53,4 @@ class DesignableButton: UIButton {
             self.layer.masksToBounds = false
         }
     }
- 
-
-    
-    
-    
-
- 
 }

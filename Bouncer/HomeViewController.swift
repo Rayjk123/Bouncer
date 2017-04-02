@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Anthem
 //
 //  Created by Daniel Kim on 3/31/17.

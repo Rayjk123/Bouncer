@@ -1,4 +1,3 @@
-Bouncer.xcodeproj/xcuserdata/
-Bouncer.xcworkspace/xcuserdata/
+**/xcuserdata/
 Pods/
 Podfile.lock

@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  EmployeeLoginViewController.swift
 //  Bouncer
 //
 //  Created by Daniel Kim on 4/1/17.
