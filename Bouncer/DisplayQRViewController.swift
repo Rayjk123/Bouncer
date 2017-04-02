@@ -38,12 +38,11 @@ class DisplayQRViewController: UIViewController{
     }
     
     func setQRImage(){
-        func setupEventImage(){
-            let storageRef = storage.reference(forURL: (inviteInstance?.qrImageURL)!)
-            storageRef.data(withMaxSize: (1024 * 1024), completion: { (data, error) -> Void in
-                self.qrImage?.image = UIImage(data: data!)
-            })
-        }
+        let storageRef = storage.reference(forURL: (inviteInstance?.qrImageURL)!)
+        storageRef.data(withMaxSize: (1024 * 1024), completion: { (data, error) -> Void in
+            self.qrImage?.image = UIImage(data: data!)
+            //self.qrImage.image = UIImage(named: "Panda")
+        })
     }
     
 }

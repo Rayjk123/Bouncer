@@ -11,6 +11,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var previewLayer: AVCaptureVideoPreviewLayer!
     private lazy var inviteRef: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "codes")
     private var inviteRefHandle: FIRDatabaseHandle?
+    var deletedValue = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,20 +95,27 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
+        var handle: UInt = 0
         print(code)
         let viewController = ValidQRViewController()
-        inviteRef.observe(.value, with: { (snapshot) in
+        handle = inviteRef.observe(.value, with: { (snapshot) in
             if(snapshot.hasChild(code)){  //The code exists in the database
                 viewController.valid = true
                 print("Entered Valid")
-                self.inviteRef.child(code).setValue(nil) //Once you download/use the QR Code. Delete it.
-                
+                self.inviteRef.child(code).removeValue()
+                self.inviteRef.removeObserver(withHandle: handle)
                 self.present(viewController, animated: true, completion: nil)
+                self.deletedValue = true
             }
             else{                         //The code does not exist int he database
-                viewController.valid = false
-                print("Entered Invalid")
-                self.present(viewController, animated: true, completion: nil)
+                if(self.deletedValue == false){
+                    viewController.valid = false
+                    print("Entered Invalid")
+                    self.present(viewController, animated: true, completion: nil)
+                }
+                else{
+                    self.deletedValue = false
+                }
             }
         })
     }

@@ -10,7 +10,6 @@
 		BCFE28D638078D5C08BDFD55 /* Pods_Bouncer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA93B5DD3293156820275C9D /* Pods_Bouncer.framework */; };
 		DE8DC90F1E8F41DE00FFA99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */; };
 		DE8DC9111E8F41DE00FFA99C /* InvitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */; };
-		DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9121E8F41DE00FFA99C /* Main.storyboard */; };
 		DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */; };
 		DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */; };
 		DE8DC9221E8F41EC00FFA99C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8DC9211E8F41EC00FFA99C /* CoreLocation.framework */; };
@@ -20,6 +19,7 @@
 		DE8DC92F1E8F859B00FFA99C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */; };
 		DE8DC9521E8F933200FFA99C /* Pokemon Battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */; };
 		DE8DC9541E8F9D1D00FFA99C /* ValidQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */; };
+		DEA8942B1E90FB9E0003C28D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA8942A1E90FB9E0003C28D /* Main.storyboard */; };
 		DECF38A11E8FD3EE00EF9958 /* InviteGuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */; };
 		DECF38A31E900CAA00EF9958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECF38A21E900CAA00EF9958 /* GoogleService-Info.plist */; };
 		DECF38A51E90850200EF9958 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF38A41E90850200EF9958 /* HomeViewController.swift */; };
@@ -34,7 +34,6 @@
 		DE8DC90B1E8F41DE00FFA99C /* Bouncer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bouncer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8DC90E1E8F41DE00FFA99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesViewController.swift; sourceTree = "<group>"; };
-		DE8DC9131E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8DC9181E8F41DE00FFA99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8DC91A1E8F41DE00FFA99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		DE8DC9511E8F933200FFA99C /* Pokemon Battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pokemon Battle.mp3"; path = "../../../../../Volumes/Transcend/DogeFeed/UGAHackathon2016/Pokemon Battle.mp3"; sourceTree = "<group>"; };
 		DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidQRViewController.swift; sourceTree = "<group>"; };
+		DEA8942A1E90FB9E0003C28D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteGuestViewController.swift; sourceTree = "<group>"; };
 		DECF38A21E900CAA00EF9958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DECF38A41E90850200EF9958 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -97,12 +97,12 @@
 			children = (
 				DE8DC9101E8F41DE00FFA99C /* InvitesViewController.swift */,
 				DE8DC92C1E8F65B700FFA99C /* DisplayQRViewController.swift */,
-				DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */,
 				DE8DC9531E8F9D1D00FFA99C /* ValidQRViewController.swift */,
+				DE8DC92E1E8F859B00FFA99C /* ScannerViewController.swift */,
 				DECF38A01E8FD3EE00EF9958 /* InviteGuestViewController.swift */,
 				DE8DC92B1E8F58F000FFA99C /* Resources */,
-				DE8DC9121E8F41DE00FFA99C /* Main.storyboard */,
 				DE8DC9151E8F41DE00FFA99C /* Assets.xcassets */,
+				DEA8942A1E90FB9E0003C28D /* Main.storyboard */,
 				DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */,
 				DE8DC91A1E8F41DE00FFA99C /* Info.plist */,
 				DECF38A21E900CAA00EF9958 /* GoogleService-Info.plist */,
@@ -197,10 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8DC9191E8F41DE00FFA99C /* LaunchScreen.storyboard in Resources */,
+				DEA8942B1E90FB9E0003C28D /* Main.storyboard in Resources */,
 				DE8DC9521E8F933200FFA99C /* Pokemon Battle.mp3 in Resources */,
 				DECF38A31E900CAA00EF9958 /* GoogleService-Info.plist in Resources */,
 				DE8DC9161E8F41DE00FFA99C /* Assets.xcassets in Resources */,
-				DE8DC9141E8F41DE00FFA99C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,14 +276,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE8DC9121E8F41DE00FFA99C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE8DC9131E8F41DE00FFA99C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE8DC9171E8F41DE00FFA99C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
