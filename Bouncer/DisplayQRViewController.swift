@@ -11,6 +11,9 @@ import Firebase
 import FirebaseStorage
 
 class DisplayQRViewController: UIViewController{
+    private lazy var storage = FIRStorage.storage()
+    
+    var inviteInstance: Invites?
     
     var qrImageURL: String?
     
@@ -19,7 +22,8 @@ class DisplayQRViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        
+        setupImageView()
+        setQRImage()
     }
     
     func setupImageView(){
@@ -34,7 +38,12 @@ class DisplayQRViewController: UIViewController{
     }
     
     func setQRImage(){
-        
+        func setupEventImage(){
+            let storageRef = storage.reference(forURL: (inviteInstance?.qrImageURL)!)
+            storageRef.data(withMaxSize: (1024 * 1024), completion: { (data, error) -> Void in
+                self.qrImage?.image = UIImage(data: data!)
+            })
+        }
     }
     
 }

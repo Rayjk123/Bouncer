@@ -76,6 +76,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         if (captureSession?.isRunning == true) {
             captureSession.stopRunning();
         }
+        inviteRef.removeAllObservers()
+        
     }
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
@@ -95,19 +97,19 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         print(code)
         let viewController = ValidQRViewController()
         inviteRef.observe(.value, with: { (snapshot) in
-            if(snapshot.hasChild(code)){
+            if(snapshot.hasChild(code)){  //The code exists in the database
                 viewController.valid = true
                 print("Entered Valid")
+                self.inviteRef.child(code).setValue(nil) //Once you download/use the QR Code. Delete it.
+                
                 self.present(viewController, animated: true, completion: nil)
             }
-            else{
+            else{                         //The code does not exist int he database
                 viewController.valid = false
                 print("Entered Invalid")
                 self.present(viewController, animated: true, completion: nil)
             }
         })
-        
-        
     }
     
     
