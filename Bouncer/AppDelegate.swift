@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let nav = UINavigationController()
-        nav.navigationBar.barTintColor = UIColor.red
-        let root = ScannerViewController()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        let nav = UINavigationController()
+//        nav.navigationBar.barTintColor = UIColor.red
+//        let root = ScannerViewController()
         //let root = ScannerViewController()
-        nav.viewControllers = [root]
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
+//        nav.viewControllers = [root]
+//        window?.rootViewController = nav
+//        window?.makeKeyAndVisible()
         //print(UIFont.familyNames)
         return true
     }
