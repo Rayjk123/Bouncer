@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let nav = UINavigationController()
-        nav.navigationBar.barTintColor = UIColor.red
-        let root = ViewController()
-        nav.viewControllers = [root]
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
-        FIRApp.configure()
         return true
     }
 
