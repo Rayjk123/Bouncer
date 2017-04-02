@@ -15,6 +15,7 @@ class GenerateGuestInvite: UIViewController, UITextFieldDelegate{
     let textField = UITextField()
     let label = UILabel()
     let button = UIButton()
+    let button4 = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,13 +60,28 @@ class GenerateGuestInvite: UIViewController, UITextFieldDelegate{
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 40).isActive = true
         
-        //label for Email
+        button4.backgroundColor = UIColor.white
+        button4.addTarget(self, action:#selector(goBack), for:.touchUpInside)
+        button4.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button4.translatesAutoresizingMaskIntoConstraints = false
+        button4.setTitle("Back", for: .normal)
+        self.view.addSubview(button4)
+        
+        button4.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        button4.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 300).isActive = true
+        button4.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
 
         
 
 
 
+        
+        
+    }
+    @IBAction func goBack(_ sender: UISegmentedControl){
+        let back = LoginViewController()
+        self.navigationController?.pushViewController(back, animated: true)
         
         
     }
@@ -83,9 +99,31 @@ class GenerateGuestInvite: UIViewController, UITextFieldDelegate{
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-           //Need coding for checking if guest email is valid.
+            FIRAuth.auth()?.createUser(withEmail: self.textField.text!, password: "", completion: { (user, error) in
+                if error != nil{
+                    let alertController = UIAlertController(title: "Error", message: "Email not registered", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                   
+                    
+                }
+                else{
+                    
+                    // let invite =
+                    // self.navigationController?.pushViewController(invite, animated: true)
+                    
+                    //Create the code
+                    print("hi")
+                }
+                }
+            )}
+        
             
            
 }
 }
-}
+
+

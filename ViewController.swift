@@ -5,7 +5,6 @@
 //  Created by Daniel Kim on 3/31/17.
 //  Copyright © 2017 Daniel Kim. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
         
         //create the UI button "Guest Check in" and "Sign a Guest in".
         button.backgroundColor = UIColor.white
-        button.setTitle("Sign a Guest In", for: .normal)
+        button.setTitle("Guest Sign In/Registration", for: .normal)
         button.addTarget(self, action:#selector(clickMe), for:.touchUpInside)
         button.setTitleColor(UIColor.black, for: UIControlState.normal)
         self.view.addSubview(button)
@@ -37,7 +36,7 @@ class ViewController: UIViewController {
         
         
         button2.backgroundColor = UIColor.white
-        button2.setTitle("Guest Check In", for: .normal)
+        button2.setTitle("Check a Guest In", for: .normal)
         button2.addTarget(self, action:#selector(clickMe2), for:.touchUpInside)
         button2.setTitleColor(UIColor.black, for: UIControlState.normal)
         self.view.addSubview(button2)
@@ -62,7 +61,7 @@ class ViewController: UIViewController {
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -250).isActive = true
         label.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 100).isActive = true
         label.heightAnchor.constraint(equalToConstant: 40).isActive = true
-
+        
         
         label2.center = CGPoint(x:185,y:150)
         label2.textAlignment = .center

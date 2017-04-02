@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //outlet
     let textField = UITextField()
     let textField2 = UITextField()
+    let button4 = UIButton()
     
     
     var isSignIn:Bool = true
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let label = UILabel(frame: CGRect(x: 0, y: 50, width: 400, height: 1000))
         label.center = CGPoint(x:190,y:150)
         label.textAlignment = .center
-        label.text = "Email:"
+        label.text = "Your Email:"
         label.font = label.font.withSize(50)
         label.textColor = UIColor.white
         self.view.addSubview(label)
@@ -81,6 +82,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         button.addTarget(self, action:#selector(Login), for:.touchUpInside)
         button.setTitleColor(UIColor.black, for: UIControlState.normal)
         self.view.addSubview(button)
+        
+        //back button
+        button4.backgroundColor = UIColor.white
+        button4.addTarget(self, action:#selector(goBack), for:.touchUpInside)
+        button4.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button4.translatesAutoresizingMaskIntoConstraints = false
+        button4.setTitle("Back", for: .normal)
+        self.view.addSubview(button4)
+        
+        button4.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        button4.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 300).isActive = true
+        button4.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    @IBAction func goBack(_ sender: UISegmentedControl){
+        let back = ViewController()
+        self.navigationController?.pushViewController(back, animated: true)
 
 
         
@@ -106,7 +131,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
-                    let login = GenerateGuestInvite()
+                    let login = InviteGuestViewController()
                     self.navigationController?.pushViewController(login, animated: true)
                 } else {
                     

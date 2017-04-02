@@ -16,6 +16,7 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
     let button = UIButton()
     let button2 = UIButton()
     let button3 = UIButton()
+    let button4 = UIButton()
     let label = UILabel()
     let label2 = UILabel()
     
@@ -42,7 +43,7 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
         
         //button to sign up
         button2.backgroundColor = UIColor.white
-        button2.setTitle("Sign-Up", for: .normal)
+        button2.setTitle("Sign In", for: .normal)
         button2.addTarget(self, action:#selector(signInSelectorChanged), for:.touchUpInside)
         button2.setTitleColor(UIColor.black, for: UIControlState.normal)
         button2.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +68,20 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
         button3.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button3.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
         
+        button4.backgroundColor = UIColor.white
+        button4.addTarget(self, action:#selector(goBack), for:.touchUpInside)
+        button4.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button4.translatesAutoresizingMaskIntoConstraints = false
+        button4.setTitle("Back", for: .normal)
+        self.view.addSubview(button4)
+        
+        button4.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        button4.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 300).isActive = true
+        button4.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+
+
         
         //Label for Guest Email
         label.textAlignment = .left
@@ -127,6 +142,12 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
 
 
     }
+    @IBAction func goBack(_ sender: UISegmentedControl){
+        let back = ViewController()
+        self.navigationController?.pushViewController(back, animated: true)
+
+        
+    }
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl){
         isSignIn = !isSignIn
         if isSignIn{
@@ -162,8 +183,8 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
                         //Print into the console if successfully logged in
                         print("You have successfully logged in")
                         
-                       // let login = ***() <--some invite page file
-                       // self.navigationController?.pushViewController(*****, animated: true)
+                       let login = InvitesViewController()
+                        self.navigationController?.pushViewController(login, animated: true)
                     } else {
                         
                         //Tells the user that there is an error and then gets firebase to tell them the error
@@ -194,16 +215,18 @@ class GuestSignUp: UIViewController, UITextFieldDelegate{
                 else {
                     FIRAuth.auth()?.createUser(withEmail: self.textField.text!, password: self.textField2.text!, completion: { (user, error) in
                         if error != nil{
-                            print("Registration Successful")
-                            
-                            
-                        }else{
                             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                             
                             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             alertController.addAction(defaultAction)
                             
                             self.present(alertController, animated: true, completion: nil)
+                           
+                            
+                            
+                        }else{
+                            let Reg = RegSuccess()
+                            self.navigationController?.pushViewController(Reg, animated: true)
                             
                         }
                         }
