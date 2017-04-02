@@ -17,28 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let nav = UINavigationController()
-        nav.navigationBar.barTintColor = UIColor.red
-        //let root = ScannerViewController()
-        //let root = InviteGuestViewController()
-        let root = HomeViewController()
-        nav.viewControllers = [root]
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
-        //print(UIFont.familyNames)
- 
         return true
     }
-    
-    
-    override init() {
-        super.init()
-        FIRApp.configure()
-        // not really needed unless you really need it FIRDatabase.database().persistenceEnabled = true
-    }
- 
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
