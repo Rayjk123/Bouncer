@@ -92,7 +92,6 @@ class ValidQRViewController: UIViewController{
     }
     
     func backToScanner(sender: UIButton){
-        let viewController = ScannerViewController()
-        self.present(viewController, animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

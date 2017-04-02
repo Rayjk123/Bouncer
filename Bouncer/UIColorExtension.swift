@@ -5,7 +5,6 @@
 //  Created by Branden Lee on 10/28/16.
 //  Copyright © 2016 Panda Life. All rights reserved.
 //
-
 import UIKit
 
 extension UIColor {

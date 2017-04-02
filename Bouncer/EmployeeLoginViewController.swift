@@ -10,17 +10,14 @@ import Firebase
 import FirebaseAuth
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+class EmployeeLoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var label: DesignableLabel!
-    
     @IBOutlet var textField: DesignableTextField!
-    
     @IBOutlet var textField2: DesignableTextField!
-    
     @IBOutlet var button: DesignableButton!
+    
     
     
     override func viewDidLoad() {
@@ -29,6 +26,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         setupToolbar()
     }
     
+    func setupToolbar(){
+        let numberToolbar = UIToolbar(frame: CGRect(x:0, y:0, width:self.view.frame.size.width, height:50))
+        numberToolbar.barStyle = UIBarStyle.default
+        let keyboardDismiss = UIButton(frame: CGRect(x:0, y:0, width:22, height:22))
+        keyboardDismiss.setImage(UIImage(named: "keyboard dismiss2"), for: UIControlState.normal)
+        keyboardDismiss.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        
+        
+        
+        numberToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(customView: keyboardDismiss)]
+        numberToolbar.sizeToFit()
+        textField.inputAccessoryView = numberToolbar
+        textField2.inputAccessoryView = numberToolbar
+    }
+    
+    func dismissKeyboard(){
+        view.endEditing(true)
+    }
     
     @IBAction func Login(_ sender: AnyObject){
         let userFromTextfield = textField.text?.lowercased()
@@ -76,8 +93,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         checkRef.observe(.value, with: { (snapshot) in
             if(snapshot.hasChild(checkEmail)){  //The code exists in the database
-                let story = UIStoryboard(name: "Main", bundle: nil)
-                let vc = story.instantiateViewController(withIdentifier: "InviteGuestViewController")
+                let vc = ScannerViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             else{                         //The code does not exist int he database
@@ -92,26 +108,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func setupToolbar(){
-        let numberToolbar = UIToolbar(frame: CGRect(x:0, y:0, width:self.view.frame.size.width, height:50))
-        numberToolbar.barStyle = UIBarStyle.default
-        let keyboardDismiss = UIButton(frame: CGRect(x:0, y:0, width:22, height:22))
-        keyboardDismiss.setImage(UIImage(named: "keyboard dismiss2"), for: UIControlState.normal)
-        keyboardDismiss.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
-        
-        
-        
-        numberToolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(customView: keyboardDismiss)]
-        numberToolbar.sizeToFit()
-        textField.inputAccessoryView = numberToolbar
-        textField2.inputAccessoryView = numberToolbar
-    }
-    
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
     
     func isValidEmail(testStr:String) -> Bool {
         print("validate emilId: \(testStr)")

@@ -111,7 +111,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 if(self.deletedValue == false){
                     viewController.valid = false
                     print("Entered Invalid")
-                    self.present(viewController, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
                 else{
                     self.deletedValue = false

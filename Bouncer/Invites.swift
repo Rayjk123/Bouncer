@@ -47,6 +47,6 @@ struct Invites {
             "qrCode": qrCode,
             "owner": owner,
             "qrImageURL": qrImageURL
-            ]
+        ]
     }
 }

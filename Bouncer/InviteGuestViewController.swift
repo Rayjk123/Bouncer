@@ -18,52 +18,41 @@ class InviteGuestViewController: UIViewController {
     private var firstTime = true
     private var hasValidated = false
     
-    var textfield = UITextField()
-    var button = UIButton()
+    
+    @IBOutlet var textfield: DesignableTextField!
+    
+    @IBOutlet var button: DesignableButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.cloud()
-        setupConstraints()
-        setupUI()
         //createQRCode()
+        setupToolbar()
     }
     
-    func setupConstraints(){
-        textfield.translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
+    func setupToolbar(){
+        let numberToolbar = UIToolbar(frame: CGRect(x:0, y:0, width:self.view.frame.size.width, height:50))
+        numberToolbar.barStyle = UIBarStyle.default
+        let keyboardDismiss = UIButton(frame: CGRect(x:0, y:0, width:22, height:22))
+        keyboardDismiss.setImage(UIImage(named: "keyboard dismiss2"), for: UIControlState.normal)
+        keyboardDismiss.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
         
-        self.view.addSubview(textfield)
-        self.view.addSubview(button)
         
-        textfield.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        textfield.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
-        textfield.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        textfield.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40).isActive = true
         
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.topAnchor.constraint(equalTo: textfield.bottomAnchor, constant: 60).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        button.widthAnchor.constraint(equalTo: textfield.widthAnchor, constant: -60).isActive = true
-        
+        numberToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(customView: keyboardDismiss)]
+        numberToolbar.sizeToFit()
+        textfield.inputAccessoryView = numberToolbar
     }
     
-    func setupUI(){
-        textfield.placeholder = "Enter Guest's Username"
-        textfield.backgroundColor = UIColor.cloud()
-        textfield.textAlignment = .center
-        textfield.font = UIFont(name: "Arial", size: 30)
-        
-        button.backgroundColor = UIColor.niceBlue()
-        button.setTitle("Submit", for: .normal)
-        button.setTitleColor(UIColor.cloud(), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Arial", size: 30)
-        button.addTarget(self, action: #selector(giveInvite), for: .touchUpInside)
-        
+    func dismissKeyboard(){
+        view.endEditing(true)
     }
     
     
-    func giveInvite(sender: UIButton){
+    
+    @IBAction func giveInvite(sender: UIButton){
         let validTextField: Bool = checkValidTextField() //Check to see that the textfields are valid
         if(!firstTime){
             inviteRef = FIRDatabase.database().reference(withPath: "guests")

@@ -20,7 +20,7 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
     let tableview = UITableView()
     
     var invites = [Invites]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = "Inbox of Invites"
@@ -38,17 +38,17 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
         inviteRef = inviteRef.child(checkEmail!).child("invites")
         
         /*
-        let invite = Invites(inviteQR: "abcde", owner: "Panda")
-        let newRef = self.inviteRef.childByAutoId() //Create a child to store all the information
-        newRef.setValue(invite.toAnyObject())
- */
+         let invite = Invites(inviteQR: "abcde", owner: "Panda")
+         let newRef = self.inviteRef.childByAutoId() //Create a child to store all the information
+         newRef.setValue(invite.toAnyObject())
+         */
         //If the table view will be empty. Set up empty label
         
         setupTableView()
         
         observeNewinvites()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -85,7 +85,7 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
     }
-
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,7 +134,7 @@ class InvitesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
- 
+    
     
     
 }
