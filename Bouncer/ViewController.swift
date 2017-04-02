@@ -22,6 +22,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
         mapView.delegate = self
+        locator.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,10 +44,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func makeGeofence(_ sender: UIButton) {
         if locationPreCheck() {
             print("Make Geofence")
-//            let circle = CLCircularRegion.init(center: (locator.location?.coordinate)!, radius: 100.0, identifier: "Here")
             let circleOverlay = MKCircle.init(center: (locator.location?.coordinate)!, radius: 100.0)
             mapView.add(circleOverlay)
             print("Added to map")
+            let circleFence = CLCircularRegion.init(center: (locator.location?.coordinate)!, radius: 100.0, identifier: "Here")
+            locator.startMonitoring(for: circleFence)
         }
     }
     
@@ -65,6 +67,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         rend.lineWidth = 1
         rend.fillColor = UIColor.purple.withAlphaComponent(0.4)
         return rend
+    }
+    
+    // MARK: CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        present(UIAlertController.init(title: "Entered!", message: "Welcome to X", preferredStyle: .alert), animated: true, completion: nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        present(UIAlertController.init(title: "Exited!", message: "See you again!", preferredStyle: .alert), animated: true, completion: nil)
+        
     }
     
     /*
