@@ -27,10 +27,18 @@ The App consists of 4 parts:
 The App has 3 different roles for people
 1. Employee
 * Employees cannot sign up and should be added by the administrator through a different employee app or through the Firebase portal.
+* An Employee login to test this app is
+* User: anthem@gmail.com
+* Password: 123456
+
 2. Guest
 * Anyone who owns the app and wants to enter the building can be a guest.
+* User: 1@gmail.com
+* Password: 123456
+
 3. Security Guard/Gate
 * The Security responsible for validating scanned QR Codes.
+* A Guest Sign in to test this app is:
 
 ## Building
 
